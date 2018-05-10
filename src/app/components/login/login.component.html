@@ -1,8 +1,21 @@
-<mat-form-field>
-    <input matInput #username placeholder="Username">
-</mat-form-field>
-<mat-form-field>
-    <input matInput #password placeholder="Password">
-</mat-form-field>
-<button mat-button (click)="login(username.value, password.value)">LOGIN</button>
-<div *ngIf="displayError" style="color:red">Invalid username or password.</div>
+<div class="background" style="background-image: url('/assets/20180506_165721.jpg')">
+    <div class="login-card mat-elevation-z2">
+        <div class="image-container">
+            <img src="/assets/TechITLOGO_3.png" />
+        </div>
+        <div class="form">
+            <div class="field">
+                <mat-form-field>
+                    <input matInput #username placeholder="Username">
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <input matInput #password placeholder="Password">
+                </mat-form-field>
+            </div>
+            <button mat-raised-button (click)="login(username.value, password.value)" color="primary">LOGIN</button>
+            <div *ngIf="displayError" class="error">Invalid username or password.</div>
+        </div>
+    </div>
+</div>
