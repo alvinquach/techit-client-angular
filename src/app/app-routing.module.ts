@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
+import { TicketsListComponent } from './components/tickets-list/tickets-list.component';
 
 const routes: Routes = [
 	{
@@ -23,6 +24,10 @@ const routes: Routes = [
 			{
 				path: 'profile',
 				component: UserProfileComponent
+			},
+			{
+				path: 'tickets',
+				component: TicketsListComponent
 			},
 		]
 	}
