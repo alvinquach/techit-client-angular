@@ -1,9 +1,56 @@
-<div class="page-container">
-    <div style="height: 100vh">
-        USER PROFILE
+<div *ngIf="userData" class="page-container">
+    <div class="card main-info-container">
+        <div class="banner">
+
+        </div>
+        <div class="avatar-container">
+            <img class="avatar" src="/assets/avatar_placeholder.png" />
+        </div>
+        <div class="name">
+            {{userData.firstName}} {{userData.lastName}} 
+        </div>
+        <div class="username">
+            {{userData.username}} 
+        </div>
+        <div class="email">
+            {{userData.email}} 
+        </div>
     </div>
     
-    <div>
-        {{userData?.firstName}} {{userData?.lastName}} 
+    <div class="card padded">
+        <div class="title">
+            Contact Info
+        </div>
+        <div class="info-row">
+            <mat-icon>person</mat-icon>
+            <div>{{userData.firstName}} {{userData.lastName}}</div>
+        </div>
+        <div class="info-row">
+            <mat-icon>phone</mat-icon>
+            <div>{{userData.phoneNumber}}</div>
+        </div>
+        <div class="info-row">
+            <mat-icon>email</mat-icon>
+            <div>{{userData.email}}</div>
+        </div>
     </div>
+
+    <div class="card padded">
+        <div class="title">
+            Affiliations
+        </div>
+        <div class="info-row">
+            <div class="label">Department</div>
+            <div>{{userData.department}}</div>
+        </div>
+        <div class="info-row">
+            <div class="label">Unit</div>
+            <div>{{userData.unit?.name}}</div>
+        </div>
+        <div class="info-row">
+            <div class="label">Position</div>
+            <div>{{userData.position}}</div>
+        </div>
+    </div>
+
 </div>
