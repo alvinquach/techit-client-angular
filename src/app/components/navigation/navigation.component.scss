@@ -1,0 +1,86 @@
+.navigation {
+    height: 64px;
+    line-height: 64px;
+    padding: 0 16px;
+    z-index: 999;
+    position: relative;
+
+    .title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .username {
+        font-size: 14px;
+        text-align: right;
+        font-weight: 500;
+        padding-right: 16px;
+    }
+}
+
+.mat-drawer-container {
+
+    .mat-drawer {
+        width: 256px;
+        background: #FFF;
+        
+        .router-link {
+            flex-direction: row;
+            box-sizing: border-box;
+            display: flex;
+            height: 48px;
+            line-height: 48px;
+            cursor: pointer;
+            outline: none;
+
+            .background {
+                
+                // Implements the new style of nav drawer links according to
+                // https://material.io/design/components/navigation-drawer.html#theming
+                &.new-style {
+                    width: 240px;
+                    height: 40px;
+                    position: absolute;
+                    background: rgba(0,0,0,0);
+                    z-index: -1;
+                    margin: 4px 8px;
+                    border-radius: 4px;
+                }
+
+                // Old style nav drawer links
+                &.old-style {
+                    width: 256px;
+                    height: 48px;
+                    position: absolute;
+                    background: rgba(0,0,0,0);
+                    z-index: -1;
+                }
+            }
+
+            .icon-container {
+                padding: 6px 32px 6px 16px;
+
+                mat-icon {
+                    color: rgba(0,0,0,0.54);
+                }
+            }
+
+            .title {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            &:hover {
+                .background {
+                    background: rgba(0,0,0,0.12);
+                }
+            }
+
+            &.active {
+                .background {
+                    background: skyblue;
+                }
+            }
+        }
+    }
+}
