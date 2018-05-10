@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { AuthService } from "../../services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent {
 
 	displayError: boolean = false;
 
-	constructor(private _authService: AuthService) {}
+	constructor(private _authService: AuthService, private _router: Router) {}
 
 	login(username: string, password: string) {
 		this.displayError = false;
@@ -18,9 +19,7 @@ export class LoginComponent {
 			username,
 			password,
 			() => {
-				if (this._authService.isLoggedIn()) console.log("LOGGED IN");
-
-				// TODO Redirect user to dashboard.
+				this._router.navigate(['profile']);
 			},
 			(err) => {
 				console.log(err);

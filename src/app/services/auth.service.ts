@@ -3,6 +3,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 export const localStorageJwtKey: string = 'key';
 
@@ -14,7 +15,7 @@ export class AuthService {
     /** Cached copy of user info parsed from JWT. */
     private _currentUser: UserInfo;
 
-    constructor(private _http: HttpClient) {}
+    constructor(private _http: HttpClient, private _router: Router) {}
 
     /** Retrieves JWT from local storage. */
     private _getToken(): string {
@@ -91,6 +92,7 @@ export class AuthService {
     logout() {
         this._currentUser = null;
         localStorage.removeItem(localStorageJwtKey);
+        this._router.navigate(['login']);
     }
 
 }

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonsModule } from './modules/commons.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { environment } from '../environments/environment';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
