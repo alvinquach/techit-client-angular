@@ -8,5 +8,5 @@ const serverHostName: string = 'localhost:3000';
 export const environment = {
 	production: false,
 	serverHostName: serverHostName,
-	serverUrl: `http://${serverHostName}`
+	serverUrl: `http://${serverHostName}/api`
 };
