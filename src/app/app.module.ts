@@ -12,6 +12,7 @@ import { CommonsModule } from './modules/commons.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { RouterModule } from '@angular/router';
     HttpServicesModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
