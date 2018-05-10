@@ -1,1 +1,8 @@
-HELLO
+<mat-form-field>
+    <input matInput #username placeholder="Username">
+</mat-form-field>
+<mat-form-field>
+    <input matInput #password placeholder="Password">
+</mat-form-field>
+<button mat-button (click)="login(username.value, password.value)">LOGIN</button>
+<div *ngIf="displayError" style="color:red">Invalid username or password.</div>
