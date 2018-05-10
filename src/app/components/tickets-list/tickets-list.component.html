@@ -1,12 +1,31 @@
 <div class="page-container">
     <div class="card">
-        <div style="height: 20vh">
-            MY TICKETS
+        <div class="title" style="padding: 24px 0 0 24px;">
+            My Tickets
         </div>
+        <mat-table #table [dataSource]="tickets">
+            <ng-container matColumnDef="subject">
+                <mat-header-cell *matHeaderCellDef>Subject</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.subject}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.status}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="priority">
+                <mat-header-cell *matHeaderCellDef>Priority</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.priority}}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
     </div>
-    <div class="card">
-        <div style="height: 100vh">
-            asdfasdfasdfsafsdf
-        </div>
-    </div>
+</div>
+
+<div class="fab-container">
+    <button mat-fab matTooltip="Create Ticket">
+        <mat-icon>
+            add
+        </mat-icon>
+    </button>
 </div>
