@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './modules/components.module';
-import { HttpServicesModule } from './modules/http-services.module';
+import { DataServicesModule } from './modules/data-services.module';
 import { AuthService, localStorageJwtKey } from './services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonsModule } from './modules/commons.module';
@@ -32,7 +32,7 @@ import { AuthGuardService } from './services/auth/auth-guard.service';
     AppRoutingModule,
     CommonsModule,
     ComponentsModule,
-    HttpServicesModule
+    DataServicesModule
   ],
   providers: [
     AuthService,
