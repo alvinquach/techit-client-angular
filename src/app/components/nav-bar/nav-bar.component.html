@@ -1,4 +1,12 @@
-<div>
-    <button mat-raised-button (click)="logout()">LOGOUT</button>
+<div fxLayout="row" fxLayoutAlign="space-between center" class="mat-elevation-z2 nav-bar">
+    <div fxFlex class="title">
+        TECHIT
+    </div>
+    <div fxFlex class="username">
+        Logged in as {{currentUserName}}
+    </div>
+    <div fxFlex="88px">
+        <button mat-raised-button (click)="logout()">LOGOUT</button>
+    </div>
 </div>
 <router-outlet></router-outlet>
