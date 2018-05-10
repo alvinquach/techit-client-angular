@@ -1,13 +1,32 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../../services/auth/auth.service";
+import { User } from "../../models/user.model";
+import { UserDataService } from "../../services/data/user-data.service";
 
 @Component({
 	selector: 'app-user-profile',
 	templateUrl: './user-profile.component.html',
 	// styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent {
+export class UserProfileComponent implements OnInit {
 
-    constructor(private _authService: AuthService) {}
+	private _userData: User;
+
+	get userData(): User {
+		return this._userData;
+	}
+
+    constructor(
+		private _authService: AuthService,
+		private _userDataService: UserDataService
+	) {}
+
+	ngOnInit() {
+		this._userDataService.getUser(this._authService.getUserId()).subscribe(
+			(res: User) => {
+				this._userData = res;
+			}
+		);
+	}
 
 }

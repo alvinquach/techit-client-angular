@@ -69,6 +69,18 @@ export class AuthService {
         return this._currentUser && this._currentUser.username;
     }
 
+    /** Get the current user's ID. */
+    getUserId(): string {
+        if (!this._currentUser) {
+            const jwt: string = this._getToken();
+            if (!jwt) {
+                return null;
+            }
+            this._parseJWT(jwt);
+        }
+        return this._currentUser && this._currentUser.id;
+    }
+
     login(username: string, password: string, callback?: () => void, errCallback?: (err) => void): void {
         const params = {
             username: username,
