@@ -1,11 +1,11 @@
-<div fxLayout="row" fxLayoutAlign="space-between center" class="mat-elevation-z2 navigation">
+<div fxLayout="row" fxLayoutAlign="space-between center" class="mat-elevation-z2 nav-bar">
     <div fxFlex="72px">
         <button mat-icon-button (click)="drawer.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
     </div>
     <div fxFlex class="title">
-        TECHIT
+        TECHIT &mdash; {{title}}
     </div>
     <div fxFlex class="username">
         Logged in as {{currentUserName}}

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../../services/auth/auth.service";
 import { User } from "../../models/user.model";
 import { UserDataService } from "../../services/data/user-data.service";
+import { TitleService } from "../../services/title.service";
 
 @Component({
 	selector: 'app-user-profile',
@@ -18,10 +19,12 @@ export class UserProfileComponent implements OnInit {
 
     constructor(
 		private _authService: AuthService,
+		private _titleService: TitleService,
 		private _userDataService: UserDataService
 	) {}
 
 	ngOnInit() {
+		this._titleService.setTitle("My Profile");
 		this._userDataService.getUser(this._authService.getUserId()).subscribe(
 			(res: User) => {
 				this._userData = res;

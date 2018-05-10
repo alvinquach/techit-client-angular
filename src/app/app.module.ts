@@ -13,6 +13,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { AuthGuardService } from './services/auth/auth-guard.service';
+import { TitleService } from './services/title.service';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AuthGuardService } from './services/auth/auth-guard.service';
   ],
   providers: [
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    TitleService
   ],
   bootstrap: [AppComponent]
 })

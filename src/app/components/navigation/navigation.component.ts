@@ -1,15 +1,19 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { AuthService } from "../../services/auth/auth.service";
 import { Routes } from "@angular/router";
+import { TitleService } from "../../services/title.service";
+import { Subscription } from "rxjs";
 
 @Component({
 	selector: 'app-navigation',
 	templateUrl: './navigation.component.html',
 	styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, OnDestroy {
 
     currentUserName: string;
+
+    title: string;
 
     private _routerLinks: RouterLink[] = [
         {
@@ -28,10 +32,21 @@ export class NavigationComponent implements OnInit {
         return this._routerLinks;
     }
 
-    constructor(private _authService: AuthService) {}
+    private _onTitleChangeSubscription: Subscription;
+
+    constructor(
+        private _authService: AuthService,
+        private _titleService: TitleService
+    ) {}
 
     ngOnInit() {
         this.currentUserName = this._authService.getUsername();
+        this._onTitleChangeSubscription = this._titleService.onTitleChange
+            .subscribe((newTitle) => {this.title = newTitle;});
+    }
+
+    ngOnDestroy() {
+        this._onTitleChangeSubscription.unsubscribe();
     }
     
     logout() {
