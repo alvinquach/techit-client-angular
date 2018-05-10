@@ -24,6 +24,9 @@ export class AuthService {
     /** Parses and caches user info from JWT. */
     private _parseJWT(jwt: string): UserInfo {
         if (jwt) {
+            if (!jwt.startsWith("Bearer ")) {
+                jwt = `Bearer ${jwt}`;
+            }
             this._currentUser = this._jwtHelper.decodeToken(jwt);
             console.log("JWT Parsed:", this._currentUser)
         }
@@ -74,7 +77,7 @@ export class AuthService {
             (res) => {
 
                 // Store the JWT in local storage.
-                localStorage.setItem(localStorageJwtKey, res);
+                localStorage.setItem(localStorageJwtKey, res.substring(7));
                 this._parseJWT(res);
 
                 callback && callback();
