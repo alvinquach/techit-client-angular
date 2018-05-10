@@ -24,6 +24,29 @@
     .mat-drawer {
         width: 256px;
         background: #FFF;
+
+        .user-info {
+            padding: 16px;
+            margin-bottom: 8px;
+            background: orange;
+
+            .avatar {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+            }
+
+            .name {
+                font-size: 20px;
+                font-weight: 500;
+                padding: 12px 0 4px 0;
+            }
+
+            .email {
+                font-size: 14px;
+                color: rgba(0,0,0,0.54);
+            }
+        }
         
         .router-link {
             flex-direction: row;

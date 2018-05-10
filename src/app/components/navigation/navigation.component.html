@@ -8,7 +8,7 @@
         TECHIT &mdash; {{title}}
     </div>
     <div fxFlex class="username">
-        Logged in as {{currentUserName}}
+        Logged in as {{currentUserUsername}}
     </div>
     <div fxFlex="64px" style="text-align: right;">
         <button mat-icon-button (click)="logout()">
@@ -18,6 +18,11 @@
 </div>
 <mat-drawer-container class="example-container" style="height: calc(100vh - 64px);">
     <mat-drawer #drawer mode="side" class="mat-elevation-z4">
+        <div class="user-info">
+            <img class="avatar" src="/assets/avatar_placeholder.png" />
+            <div class="name">{{currentUserName}}</div>
+            <div class="email">{{currentUserEmail}}</div>
+        </div>
         <div *ngFor="let link of routerLinks" class="router-link" [routerLink]="link.path" routerLinkActive="active">
             <div class="old-style background"></div>
             <div class="icon-container">

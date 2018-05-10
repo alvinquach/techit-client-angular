@@ -11,7 +11,9 @@ import { Subscription } from "rxjs";
 })
 export class NavigationComponent implements OnInit, OnDestroy {
 
+    currentUserUsername: string;
     currentUserName: string;
+    currentUserEmail: string;
 
     title: string;
 
@@ -40,7 +42,9 @@ export class NavigationComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit() {
-        this.currentUserName = this._authService.getUsername();
+        this.currentUserUsername = this._authService.getUsername();
+        this.currentUserName = this._authService.getName();
+        this.currentUserEmail = this._authService.getEmail();
         this._onTitleChangeSubscription = this._titleService.onTitleChange
             .subscribe((newTitle) => {this.title = newTitle;});
     }

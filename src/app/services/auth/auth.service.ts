@@ -69,6 +69,30 @@ export class AuthService {
         return this._currentUser && this._currentUser.username;
     }
 
+    /** Get the current user's full name. */
+    getName(): string {
+        if (!this._currentUser) {
+            const jwt: string = this._getToken();
+            if (!jwt) {
+                return null;
+            }
+            this._parseJWT(jwt);
+        }
+        return this._currentUser && this._currentUser.name;
+    }
+
+    /** Get the current user's email. */
+    getEmail(): string {
+        if (!this._currentUser) {
+            const jwt: string = this._getToken();
+            if (!jwt) {
+                return null;
+            }
+            this._parseJWT(jwt);
+        }
+        return this._currentUser && this._currentUser.email;
+    }
+
     /** Get the current user's ID. */
     getUserId(): string {
         if (!this._currentUser) {
@@ -112,6 +136,8 @@ export class AuthService {
 interface UserInfo {
     id: string,
     username: string,
+    name: string,
+    email: string,
     position: string,
     unitId: string
 }
