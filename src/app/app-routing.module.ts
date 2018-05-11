@@ -5,6 +5,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 import { TicketsListComponent } from './components/tickets-list/tickets-list.component';
+import { EditTicketComponent } from './components/edit-ticket/edit-ticket.component';
+import { CreateTicketComponent } from './components/create-ticket/create-ticket.component';
 
 const routes: Routes = [
 	{
@@ -28,6 +30,14 @@ const routes: Routes = [
 			{
 				path: 'tickets',
 				component: TicketsListComponent
+			},
+			{
+				path: 'tickets/new',
+				component: CreateTicketComponent
+			},
+			{
+				path: 'tickets/:ticketId',
+				component: EditTicketComponent
 			},
 		]
 	}

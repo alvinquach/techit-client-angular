@@ -3,6 +3,7 @@ import { AuthService } from "../../services/auth/auth.service";
 import { TitleService } from "../../services/title.service";
 import { UserDataService } from "../../services/data/user-data.service";
 import { Ticket } from "../../models/ticket.model";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: 'app-tickets-list',
@@ -31,6 +32,7 @@ export class TicketsListComponent implements OnInit {
 
     constructor(
 		private _authService: AuthService,
+		private _router: Router,
 		private _titleService: TitleService,
 		private _userDataService: UserDataService
 	) {}
@@ -45,7 +47,11 @@ export class TicketsListComponent implements OnInit {
 	}
 
 	viewTicket(ticketId: string): void {
-
+		this._router.navigate(['tickets', ticketId]);
+	}
+	
+	createTicket(): void {
+		this._router.navigate(['tickets', 'new']);
 	}
 
 }

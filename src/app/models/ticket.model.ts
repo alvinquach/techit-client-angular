@@ -7,13 +7,13 @@ export interface Ticket {
     details?: string;
     location?: string;
     priority: string;
-    createdDate: Date;
+    createdDate?: Date;
     startDate?: Date;
     endDate?: Date;
     lastUpdated?: Date;
     status: string;
     subject: string;
-    createdBy: User | string;
+    createdBy?: User | string;
     unit: Unit | string;
     technicians: (User | string)[];
     updates: (Update | string)[];

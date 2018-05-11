@@ -6,6 +6,8 @@ import { RouterModule } from "@angular/router";
 import { UserProfileComponent } from "../components/user-profile/user-profile.component";
 import { TicketsListComponent } from "../components/tickets-list/tickets-list.component";
 import { OkPromptComponent } from "../components/prompts/ok-prompt/ok-prompt.component";
+import { EditTicketComponent } from "../components/edit-ticket/edit-ticket.component";
+import { CreateTicketComponent } from "../components/create-ticket/create-ticket.component";
 
 @NgModule({
 	imports: [
@@ -20,7 +22,9 @@ import { OkPromptComponent } from "../components/prompts/ok-prompt/ok-prompt.com
         LoginComponent,
         NavigationComponent,
         UserProfileComponent,
-        TicketsListComponent
+        TicketsListComponent,
+        EditTicketComponent,
+        CreateTicketComponent,
     ]
 })
 export class ComponentsModule {}
