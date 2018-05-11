@@ -26,7 +26,7 @@
                     <mat-cell *matCellDef="let element">
                         <button mat-icon-button
                             (click)="viewTicket(element._id)"
-                            color="primary"
+                            color="accent"
                             matTooltip="View & Edit Ticket"
                             matTooltipPosition="before"
                             matTooltipShowDelay="100">
@@ -48,7 +48,7 @@
 </div>
 
 <div class="fab-container">
-    <button mat-fab matTooltip="Create Ticket">
+    <button mat-fab matTooltip="Create Ticket" color="primary">
         <mat-icon>
             add
         </mat-icon>

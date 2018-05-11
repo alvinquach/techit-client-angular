@@ -1,5 +1,9 @@
+@import '../../../app-theme.scss';
+
 .nav-bar {
-    color: rgba(0,0,0,0.87);
+    background: mat-color($app-accent, 800); 
+    // color: rgba(0,0,0,0.87);
+    color: #fff;
     height: 64px;
     line-height: 64px;
     padding: 0 16px;
@@ -28,7 +32,7 @@
         .user-info {
             padding: 16px;
             margin-bottom: 8px;
-            background: orange;
+            background: mat-color($app-primary); 
 
             .avatar {
                 width: 64px;
@@ -37,7 +41,7 @@
             }
 
             .name {
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 500;
                 padding: 12px 0 4px 0;
             }
@@ -96,13 +100,13 @@
 
             &:hover {
                 .background {
-                    background: rgba(0,0,0,0.12);
+                    background: mat-color($app-accent, 200); 
                 }
             }
 
             &.active {
                 .background {
-                    background: skyblue;
+                    background: mat-color($app-accent, 300); 
                 }
             }
         }

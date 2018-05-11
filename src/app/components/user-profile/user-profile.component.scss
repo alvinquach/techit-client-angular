@@ -1,3 +1,5 @@
+@import '../../../app-theme.scss';
+
 $avatar-size: 160px;
 $avatar-size-small: 128px;
 
@@ -5,7 +7,7 @@ $avatar-size-small: 128px;
     text-align: center;
 
     .banner {
-        background: turquoise;
+        background: mat-color($app-primary);
         height: 192px;
     }
 
