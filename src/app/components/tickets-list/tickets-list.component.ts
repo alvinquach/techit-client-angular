@@ -7,14 +7,16 @@ import { Ticket } from "../../models/ticket.model";
 @Component({
 	selector: 'app-tickets-list',
 	templateUrl: './tickets-list.component.html',
-	// styleUrls: ['./tickets-list.component.scss']
+	styleUrls: ['./tickets-list.component.scss']
 })
 export class TicketsListComponent implements OnInit {
 
 	private readonly _displayedColumns: string[] = [
 		'subject',
+		'updated',
 		'priority',
-		'status'
+		'status',
+		'action'
 	];
 
 	get displayedColumns(): string[] {
@@ -34,12 +36,16 @@ export class TicketsListComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
-		this._titleService.setTitle("My Tickets");
+		this._titleService.setTitle("Tickets");
 		this._userDataService.getTicketsByUser(this._authService.getUserId()).subscribe(
 			(res: Ticket[]) => {
 				this._tickets = res;
 			}
 		);
+	}
+
+	viewTicket(ticketId: string): void {
+
 	}
 
 }

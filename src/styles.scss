@@ -14,6 +14,11 @@ html {
 	max-width: 960px;
 	margin: 24px auto;
 	color: rgba(0,0,0,0.87);
+
+	@media screen and (max-width: 600px) {
+		width: calc(100% - 16px);
+		margin: 8px auto;
+	}
 	
 	.card {
 		background: #FFF;
@@ -60,5 +65,11 @@ html {
 .fab-container {
 	position: fixed;
 	bottom: 24px;
-	right: 32px;
+	right: 28px;
+}
+
+.mat-table {
+	.mat-cell {
+		font-size: 13px;
+	}
 }
