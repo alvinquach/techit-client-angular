@@ -10,5 +10,5 @@ export interface User {
     lastName: string;
     position: string;
     username: string;
-    unit: Unit;
+    unit: Unit | string;
 }
