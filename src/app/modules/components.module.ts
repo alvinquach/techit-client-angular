@@ -5,13 +5,18 @@ import { NavigationComponent } from "../components/navigation/navigation.compone
 import { RouterModule } from "@angular/router";
 import { UserProfileComponent } from "../components/user-profile/user-profile.component";
 import { TicketsListComponent } from "../components/tickets-list/tickets-list.component";
+import { OkPromptComponent } from "../components/prompts/ok-prompt/ok-prompt.component";
 
 @NgModule({
 	imports: [
         RouterModule,
         CommonsModule
     ],
+    entryComponents: [
+        OkPromptComponent,
+    ],
     declarations: [
+        OkPromptComponent,
         LoginComponent,
         NavigationComponent,
         UserProfileComponent,

@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { 
     MatButtonModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
@@ -8,12 +9,11 @@ import {
     MatTableModule,
     MatTooltipModule,
 } from "@angular/material";
-import { CdkTableModule } from "@angular/cdk/table";
 
 @NgModule({
     imports: [
-        // CdkTableModule,
         MatButtonModule,
+        MatDialogModule,
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
@@ -22,8 +22,8 @@ import { CdkTableModule } from "@angular/cdk/table";
         MatTooltipModule,
     ],
     exports: [
-        // CdkTableModule,
         MatButtonModule,
+        MatDialogModule,
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,

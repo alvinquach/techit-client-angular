@@ -3,6 +3,8 @@ import { AuthService } from "../../services/auth/auth.service";
 import { User } from "../../models/user.model";
 import { UserDataService } from "../../services/data/user-data.service";
 import { TitleService } from "../../services/title.service";
+import { MatDialog, MatDialogRef } from "@angular/material";
+import { OkPromptComponent } from "../prompts/ok-prompt/ok-prompt.component";
 
 @Component({
 	selector: 'app-user-profile',
@@ -20,7 +22,8 @@ export class UserProfileComponent implements OnInit {
     constructor(
 		private _authService: AuthService,
 		private _titleService: TitleService,
-		private _userDataService: UserDataService
+		private _userDataService: UserDataService,
+		public dialog: MatDialog
 	) {}
 
 	ngOnInit() {
@@ -30,6 +33,16 @@ export class UserProfileComponent implements OnInit {
 				this._userData = res;
 			}
 		);
+	}
+
+	editProfile(): void {
+		const dialogRef: MatDialogRef<OkPromptComponent> = this.dialog.open(OkPromptComponent, {
+			width: '480px',
+			data: {
+				title: 'Coming Soon!',
+				text: `The edit profile feature is not available yet.\n\nIt says 'coming soon' above, but in reality this feature will probably never be implemented since it wasn't required for this assignment.`
+			}
+		});
 	}
 
 }

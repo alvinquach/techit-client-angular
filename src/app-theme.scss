@@ -2,8 +2,9 @@
 
 @include mat-core();
 
+// Theme colors are based on CSULA colors.
 $app-primary: mat-palette($mat-amber, 400, 200, 700);
-$app-accent: mat-palette($mat-grey, 700, 400, 900);
+$app-accent: mat-palette($mat-grey, 800, 400, 900);
 $app-warn: mat-palette($mat-red);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
